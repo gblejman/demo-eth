@@ -1,0 +1,11 @@
+{
+  "name": "@demo-eth/monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "dependencies": {
+    "prettier": "^2.6.2"
+  }
+}
