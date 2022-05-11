@@ -7,10 +7,9 @@ import "@typechain/hardhat";
 import "hardhat-deploy";
 import "hardhat-gas-reporter";
 import "solidity-coverage";
+import { getRpcUrl, getAccountPrivateKey } from "./utils";
 
 dotenv.config();
-
-import { getRpcUrl, getAccountPrivateKey } from "./utils";
 
 task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
   const accounts = await hre.ethers.getSigners();
@@ -40,6 +39,9 @@ const config: HardhatUserConfig = {
   },
   defaultNetwork: "hardhat",
   networks: {
+    // localhost: {
+    //   url: "http://127.0.0.1:8545/",
+    // },
     localhost: {
       url: getRpcUrl("localhost"),
     },
